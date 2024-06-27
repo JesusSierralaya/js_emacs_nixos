@@ -1,0 +1,23 @@
+#+title: Guide Js
+
+From https://github.com/Asabeneh/30-Days-Of-JavaScript
+
+My code editor is Emacs with the framework doom
+
+* Install nodejs
+#+begin_src nix
+  environment.systemPackages = with pkgs; [
+    # other packages
+    # js practice
+    nodejs_22
+  ];
+#+end_src
+
+Dont forget rebuild nixos
+
+* browser
+I choose chromium. Install the package because it has the same setting.
+
+* First try in console
+
+[[./images/Screenshot_20240628_003757.png]]
