@@ -106,5 +106,9 @@ To ensure you can use the Doom Emacs commands, you need to add `~/.config/emacs/
 4. Clone the repo `SPC g C`, `u`
 ![image](https://github.com/JesusSierralaya/js_emacs_nixos/assets/86715028/d81517d4-3dcf-4534-8f67-73e4b54a25e9)
 
-### Make a change and send to the github repository
-1. Create a commit `SPC g g`, `s`
+### Make a change and send it to the github repository
+1. Open Maggit status `SPC g g`
+2. Stage the changes `s`
+3. Create a commit `c c` 
+4. Send the commit for pushing `C c C c`
+5. Push the changes `p p`
