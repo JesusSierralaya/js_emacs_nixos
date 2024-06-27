@@ -18,6 +18,11 @@ Dont forget rebuild nixos
 * browser
 I choose chromium. Install the package because it has the same setting.
 
-* First try in console
+* hello world in console
+
 
 [[./images/Screenshot_20240628_003757.png]]
+
+* Some calculations
+
+[[./images/Screenshot_20240628_005413.png]]
