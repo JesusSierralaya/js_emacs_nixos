@@ -93,7 +93,7 @@ To ensure you can use the Doom Emacs commands, you need to add `~/.config/emacs/
    xclip -selection clipboard < ~/.ssh/id_rsa.pub
    ```
 9. Add the SSH key to your GitHub account
-   - Navigate to GitHub SSH settings
+   - Go to [GitHub SSH settings](https://github.com/settings/keys)
    - Click on "New SSH key"
    - Add a title (e.g., "nixos laptop") and paste the key in the key field
    - Click "Add SSH key"
