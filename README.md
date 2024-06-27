@@ -97,3 +97,12 @@ To ensure you can use the Doom Emacs commands, you need to add `~/.config/emacs/
    - Click on "New SSH key"
    - Add a title (e.g., "nixos laptop") and paste the key in the key field
    - Click "Add SSH key"
+
+### Clone the repository to local with doom emacs
+1. Create a directory for the projects (e.g., "projects")
+2. Go there with Doom emacs `SPC f d`
+3. Copy the shh url in Github
+![image](https://github.com/JesusSierralaya/js_emacs_nixos/assets/86715028/9b8a4dea-d130-48fd-91e5-0fbab57320ad)
+4. Clone the repo `SPC g C`, `u`
+![image](https://github.com/JesusSierralaya/js_emacs_nixos/assets/86715028/d81517d4-3dcf-4534-8f67-73e4b54a25e9)
+
