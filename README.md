@@ -43,6 +43,8 @@ I installed the next packages:
     git
     ripgrep
     fd
+    multimarkdown
+    shellcheck
    ];
    ```
 
