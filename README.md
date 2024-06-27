@@ -13,12 +13,36 @@ This guide will help you set up Emacs on NixOS and get started with JavaScript d
 2. Navigate to `/etc/nixos`.
 3. Open `configuration.nix` in a text editor.
 4. Add the packages you want to install under `environment.systemPackages`:
+
    ```nix
    environment.systemPackages = with pkgs; [
-     # Example: to install Brave browser
-     brave
+    # Example: to install Brave browser
+    brave
    ];
+   ```
+
+6. Rebuild NixOS
+
+   ```sh
+   sudo nixos-rebuild switch
+   ```
 
 ## Install Doom emacs 
 
 For detailed installation instructions, follow the guide available in the [Doom Emacs repository](https://github.com/doomemacs/doomemacs).
+
+I installed the next packages:
+
+   ```nix
+   environment.systemPackages = with pkgs; [
+    # other packages
+    # Install emacs and dependencies
+    emacs
+    git
+    ripgrep
+    fd
+    brave
+   ];
+   ```
+
+Don't forget rebuild NixOS.
