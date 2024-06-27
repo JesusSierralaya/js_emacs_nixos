@@ -46,13 +46,13 @@ I installed the next packages:
    ];
    ```
 
+Don't forget to rebuild NixOS.
+
 Run in your terminal:
    ```sh
    git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
    ~/.config/emacs/bin/doom install
    ```
-
-Don't forget to rebuild NixOS.
 
 ### "Add ~/.config/emacs/bin to your PATH"
 
