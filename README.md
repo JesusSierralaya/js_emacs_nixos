@@ -27,9 +27,11 @@ This guide will help you set up Emacs on NixOS and get started with JavaScript d
    sudo nixos-rebuild switch
    ```
 
-## Install Doom emacs 
+## Doom emacs 
 
 For detailed installation instructions, follow the guide available in the [Doom Emacs repository](https://github.com/doomemacs/doomemacs).
+
+### Install Doom emacs
 
 I installed the next packages:
 
@@ -45,3 +47,14 @@ I installed the next packages:
    ```
 
 Don't forget to rebuild NixOS.
+
+### "Add ~/.config/emacs/bin to your PATH"
+
+To ensure you can use the Doom Emacs commands, you need to add `~/.config/emacs/bin` to your PATH. 
+
+1. Create a file called `.bashrc` in your home directory (if it doesn't already exist).
+2. Add the following line to `.bashrc`:
+
+   ```sh
+   export PATH="$HOME/.config/emacs/bin:$PATH"
+   ```
