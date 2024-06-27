@@ -41,8 +41,7 @@ I installed the next packages:
     git
     ripgrep
     fd
-    brave
    ];
    ```
 
-Don't forget rebuild NixOS.
+Don't forget to rebuild NixOS.
