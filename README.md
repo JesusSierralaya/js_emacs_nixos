@@ -66,3 +66,34 @@ To ensure you can use the Doom Emacs commands, you need to add `~/.config/emacs/
    ```sh
    export PATH="$HOME/.config/emacs/bin:$PATH"
    ```
+### Link your github account with emacs
+
+1. Install xclip package
+2. Generate an SSH key for your GitHub account
+   ```sh
+   ssh-keygen -t rsa -b 4096 -C "jesus.sierralaya@hotmail.com"
+   ```
+3. Save the key in the default location (Press Enter)
+4. Create a passphrase (Remember this passphrase as you will need it for every pull or push)
+5. Start the ssh agent
+   ```sh
+   eval "$(ssh-agent -s)"
+   ```
+6. Add the private SSH key to the SSH agent and enter your passphrase
+   ```sh
+   ssh-add
+   ```
+7. Configure your GitHub user data
+   ```sh
+   git config --global user.name "Jesus Sierralaya"
+   git config --global user.email "jesus.sierralaya@hotmail.com"
+   ```
+8. Copy the SSH key to the clipboard (if saved in the default location)
+   ```sh
+   xclip -selection clipboard < ~/.ssh/id_rsa.pub
+   ```
+9. Add the SSH key to your GitHub account
+   - Navigate to GitHub SSH settings
+   - Click on "New SSH key"
+   - Add a title (e.g., "nixos laptop") and paste the key in the key field
+   - Click "Add SSH key"
