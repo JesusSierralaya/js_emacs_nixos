@@ -44,7 +44,7 @@ Then create the function and binding
 (defun open-html-with-browser-sync ()
   "Open index.html with Browser Sync."
   (interactive)
-  (let ((default-directory (projectile-project-root)))
+  (let ((default-directory (file-name-directory (buffer-file-name))))
     (start-process "browser-sync" "*browser-sync*"
                    "browser-sync" "start" "--server" "--files" "*.html" "*.css" "*.js")
     (browse-url "http://localhost:3000/index.html")))
@@ -69,3 +69,27 @@ With ~SPC o l~ we can call the sync browser
   #+RESULTS:
   : hello!
   : undefined
+** Example of variables
+#+begin_src js  :exports both
+let firstName = 'Jesus'
+let lastName = 'Sierralaya'
+let age = 100
+let isMarried = true
+
+console.log(firstName, lastName, age, isMarried)
+#+end_src
+
+#+RESULTS:
+: Jesus Sierralaya 100 true
+: undefined
+** Example of constants
+#+begin_src js :exports both
+const PI = 3.14
+const gravity = 9.81
+
+console.log(gravity, PI)
+#+end_src
+
+#+RESULTS:
+: 9.81 3.14
+: undefined
