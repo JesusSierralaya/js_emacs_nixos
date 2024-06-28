@@ -54,3 +54,6 @@ Then create the function and binding
 #+end_src
 
 With ~SPC o l~ we can call the sync browser
+
+* Button and inline scripts
+[[./images/Screenshot_20240628_130513.png]]
