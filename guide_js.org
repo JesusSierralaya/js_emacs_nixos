@@ -69,3 +69,27 @@ With ~SPC o l~ we can call the sync browser
   #+RESULTS:
   : hello!
   : undefined
+** Example of variables
+#+begin_src js  :exports both
+let firstName = 'Jesus'
+let lastName = 'Sierralaya'
+let age = 100
+let isMarried = true
+
+console.log(firstName, lastName, age, isMarried)
+#+end_src
+
+#+RESULTS:
+: Jesus Sierralaya 100 true
+: undefined
+** Example of constants
+#+begin_src js :exports both
+const PI = 3.14
+const gravity = 9.81
+
+console.log(gravity, PI)
+#+end_src
+
+#+RESULTS:
+: 9.81 3.14
+: undefined
