@@ -93,3 +93,36 @@ console.log(gravity, PI)
 #+RESULTS:
 : 9.81 3.14
 : undefined
+
+* Data types
+** primitive
+#+begin_src js :exports both
+let word = 'JavaScript'
+
+word[0] = 'Y'
+console.log(word)
+#+end_src
+
+#+RESULTS:
+: JavaScript
+: undefined
+** non-primitive
+#+begin_src js :exports both
+let nums = [1, 2, 3]
+nums[0] = 10
+
+console.log(nums)
+#+end_src
+
+#+RESULTS:
+: [10 (\, 2) (\, 3)]
+
+#+begin_src js :exports both
+let nums = [1, 2, 3]
+let numbers = [1, 2, 3]
+console.log(nums == numbers)
+#+end_src
+
+#+RESULTS:
+: false
+: undefined
