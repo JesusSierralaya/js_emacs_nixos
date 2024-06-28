@@ -62,7 +62,7 @@ With ~SPC o l~ we can call the sync browser
 - Camel with two hump: classes ~CamelWithTwoHump~
 
 ** first code blocks
-  #+begin_src js
+  #+begin_src js :exports both
   console.log("hello!")
   #+end_src
 
