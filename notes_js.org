@@ -106,7 +106,7 @@ console.log(word)
 #+RESULTS:
 : JavaScript
 : undefined
-** non-primitive
+** non-primitive: arrays, functions or objects
 #+begin_src js :exports both
 let nums = [1, 2, 3]
 nums[0] = 10
@@ -126,3 +126,294 @@ console.log(nums == numbers)
 #+RESULTS:
 : false
 : undefined
+
+#+begin_src js :export both
+let userOne = {
+    name: 'Jesus',
+    role: 'student',
+    country: 'Spain'
+}
+
+let userTwo = {
+    name: 'Jesus',
+    role: 'student',
+    country: 'Spain'
+}
+
+console.log(userOne == userTwo)
+#+end_src
+
+#+RESULTS:
+: false
+: undefined
+
+=We do not compare non-primitive data.=
+They are compared by reference instead of value.
+
+#+begin_src js :exports both
+let nums = [1, 2, 3]
+let numbers = nums
+
+console.log(nums == numbers)
+
+let userOne = {
+    name: 'Jesus'
+}
+let userTwo = userOne
+
+console.log(userOne == userTwo)
+#+end_src
+
+#+RESULTS:
+: true
+: true
+: undefined
+** Math object
+#+begin_src js :exports both
+const PI = Math.PI
+
+console.log(PI)
+console.log(Math.round(PI))
+console.log(Math.round(9.81))
+console.log(Math.floor(PI))
+console.log(Math.min(1, 2, 3))
+#+end_src
+
+#+RESULTS:
+: 3.141592653589793
+: 3
+: 10
+: 3
+: 1
+: undefined
+
+*** Random
+#+begin_src js :exports both
+const randNum = Math.random()
+console.log(randNum)
+#+end_src
+
+#+RESULTS:
+: 0.08837059132377467
+: undefined
+*** Random between 0-10
+#+begin_src js :exports both
+const num = Math.floor(Math.random() * 11)
+console.log(num)
+#+end_src
+
+#+RESULTS:
+: 7
+: undefined
+*** Other math functions
+#+begin_src js :export both
+console.log(Math.sqrt(9))
+console.log(Math.log(2))
+console.log(Math.E)
+console.log(Math.LN2)
+// trigo
+console.log(Math.sin(60))
+#+end_src
+
+#+RESULTS:
+: 3
+: 0.6931471805599453
+: 2.718281828459045
+: 0.6931471805599453
+: -0.3048106211022167
+: undefined
+** Strings
+Concatenation
+#+begin_src js :exports both
+let firstName = 'Jesus'
+let lastName = 'Sierralaya'
+let space = ' '
+let country = 'Peru'
+
+let fullName = firstName + space + lastName
+let personInfor = 'I am from ' + country
+
+console.log(fullName)
+console.log(personInfor)
+console.log('Test the new line\n and tab: 1\t3\t5')
+#+end_src
+
+#+RESULTS:
+: Jesus Sierralaya
+: I am from Peru
+: Test the new line
+:  and tab: 1	3	5
+: undefined
+
+Inject data
+#+begin_src js :exports both
+let a = 2
+let b = 3
+console.log(`The sum of ${a} and ${b} is ${a + b}`)
+console.log(`${a} is greater than ${b}: ${a > b}`)
+#+end_src
+
+#+RESULTS:
+: The sum of 2 and 3 is 5
+: 2 is greater than 3: false
+: undefined
+length and characters
+#+begin_src js :exports both
+let lastName = 'Sierralaya'
+console.log(lastName.length)
+
+let secondLetter = lastName[1]
+console.log('The second letter is \"', secondLetter,'\"')
+
+console.log('Don\'t forgot the \'()\' in functions:', lastName.toUpperCase(), lastName.toLowerCase())
+// substr
+console.log('\nsubstr(starting index, number of characters)', '\nFrom the start 6 characters:', lastName.substr(0,6), '\nFrom 7 to the end:', lastName.substr(7))
+#+end_src
+
+#+RESULTS:
+: 10
+: The second letter is " i "
+: Don't forgot the '()' in functions: SIERRALAYA sierralaya
+:
+: substr(starting index, number of characters)
+: From the start 6 characters: Sierra
+: From 7 to the end: aya
+: undefined
+
+** trim(), include(), replace(), charAt(), charCodeAt()
+#+begin_src js :exports both
+let fullName = ' Jesus Sierralaya '
+let countries = 'Finland, Sweden, Norway'
+
+//split() didn't work in org mode idk why
+// console.log(fullName.split(' '))
+// console.log(countries.split(', '))
+console.log(fullName)
+console.log(fullName.trim(' '))
+
+console.log('include \'Jesus\'?:', fullName.includes('Jesus'))
+
+console.log(fullName.replace('Jesus','J.'))
+
+console.log('charAt returns the value:', fullName.charAt(7))
+console.log('charCodeAt returns the ASCII number:', fullName.charCodeAt(7))
+
+#+end_src
+
+#+RESULTS:
+:  Jesus Sierralaya
+: Jesus Sierralaya
+: include 'Jesus'?: true
+:  J. Sierralaya
+: charAt returns the value: S
+: charCodeAt returns the charcode: 83
+: undefined
+** indexOf(), indexOf(), concat(), startsWith(), search()
+#+begin_src js :exports both
+let grettings = 'Hi! I\'m Jesus Sierralaya. Yes that\'s my name, Jesus Sierralaya'
+let fullName = 'Jesus Sierralaya'
+let iAm = 'I\'m '
+
+// indexOf()
+console.log(fullName.indexOf('J'))
+console.log(fullName.indexOf('S'))
+console.log(fullName.indexOf('o')) //the index doesn't exist
+
+// lastIndexOf()
+console.log(grettings.lastIndexOf('Sierralaya'))
+
+// concat()
+console.log(iAm.concat("JS"))
+
+// startsWith()
+console.log(grettings.startsWith('Hi'))
+console.log(grettings.endsWith('ya'))
+
+// search() returns the index of the first match
+console.log(grettings.search('J'))
+
+//repeat()
+// console.log(fullName.repeat(3))
+#+end_src
+
+#+RESULTS:
+: 0
+: 6
+: -1
+: 52
+: I'm JS
+: true
+: true
+: 8
+: undefined
+** match()
+#+begin_src js :exports both
+let grettings = 'Hi! I\'m Jesus Sierralaya. Yes that\'s my name, Jesus Sierralaya'
+
+// console.log(greetings.match('Jesus'))
+// i: case insensitive
+console.log(grettings.match(/jesus/i))
+#+end_src
+
+#+RESULTS:
+: ['Jesus '(\, index:) 8 (\, input:) "Hi! I'm Jesus Sierralaya. Yes that's my name, Jesus Sierralaya" (\, groups:) undefined]
+
+** match to find digits
+#+begin_src js :exports both
+let txt = 'In 2019, I ran 30 Days of Python. Now, in 2020 I am super exited to start this challenge'
+let regEx = /\d+/
+
+console.log(txt.match(regEx))  // ["2", "0", "1", "9", "3", "0", "2", "0", "2", "0"]
+// console.log(txt.match(/\d+/g)) // ["2019", "30", "2020"]
+#+end_src
+
+#+RESULTS:
+: ['2019 '(\, index:) 3 (\, input:) 'In 2019 (\, I) ran 30 Days of Python. Now (\, in) 2020 I am super exited to start this challenge '(\, groups:) undefined]
+** typeof()
+#+begin_src js :exports both
+let fullName = 'Jesus Sierralaya'
+let job
+
+console.log(typeof fullName)
+console.log(typeof true)
+console.log(typeof NaN)
+console.log(typeof job)
+console.log(typeof null)
+#+end_src
+
+#+RESULTS:
+: string
+: boolean
+: number
+: undefined
+: object
+: undefined
+** String to Int
+#+begin_src js :exports both
+let num = '10'
+
+console.log(typeof parseInt(num))
+console.log(typeof Number(num))
+console.log(typeof +num)
+
+let numFloat = '9.81'
+console.log('\n')
+console.log(parseInt(numFloat)) // float to int
+console.log(parseFloat(numFloat))
+console.log(Number(numFloat))
+console.log(+numFloat)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+number
+number
+number
+
+
+9
+9.81
+9.81
+9.81
+undefined
+#+end_example
