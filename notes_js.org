@@ -417,3 +417,153 @@ number
 9.81
 undefined
 #+end_example
+* Booleans
+#+begin_src js :exports both
+// equivalent?
+console.log(1 == true);
+console.log(undefined == null);
+// exactly the same?
+console.log(1 === true)
+console.log(undefined === null);
+//
+console.log('mango'.length != 'avocado'.length);
+console.log('mango'.length < 'avocado'.length);
+#+end_src
+
+#+RESULTS:
+: true
+: true
+: false
+: false
+: true
+: true
+: undefined
+Always use 3 equals unless you have a good reason to use 2.
+* Logical operators
+- &&: gets true only if the two operands are true
+- ||: gets true either of the operand is true
+- !: gets true to false and false to true
+#+begin_src js :exports both
+const trueVar = 4 > 3
+const falseVar = 4 < 3
+
+console.log(
+  'Ampersand',
+  `\ntrue && true = ${trueVar && trueVar}`,
+  `\ntrue && false = ${trueVar && falseVar}`,
+  `\nfalse && false = ${falseVar && falseVar}\n`
+);
+console.log(
+  'Pipe',
+  `\ntrue || true = ${trueVar || trueVar}`,
+  `\ntrue || false = ${trueVar || falseVar}`,
+  `\nfalse || false = ${falseVar || falseVar}`
+);
+
+let isLightOn = true
+let isLightOff = !isLightOn
+console.log(
+  'Negation',
+  `\n!true = ${!trueVar}`,
+  `\nisLightOff = ${isLightOff}`
+);
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Ampersand
+true && true = true
+true && false = false
+false && false = false
+
+Pipe
+true || true = true
+true || false = true
+false || false = false
+Negation
+!true = false
+isLightOff = false
+undefined
+#+end_example
+* Increment/decrement operator
+#+begin_src js :exports both
+let count = 0
+console.log(count, ++count, count);
+count = 0
+console.log(count, count++, count);
+
+count = 0
+console.log(count, --count, count);
+count = 0
+console.log(count, count--, count);
+console.log(count--, count--, count);
+#+end_src
+
+#+RESULTS:
+: 0 1 1
+: 0 0 1
+: 0 -1 -1
+: 0 0 -1
+: -1 -2 -3
+: undefined
+* Ternary Operators
+Another way to write a condition
+#+begin_src js :exports both
+let isRaining = true
+isRaining
+    ? console.log('You need a rain coat')
+    : console.log('No need a rain coat');
+
+isRaining = false
+isRaining
+    ? console.log('You need a rain coat')
+    : console.log('No need a rain coat');
+
+let thirsty = false
+thirsty
+    ? console.log('Drink some water')
+    : console.log('Don\'t drink more water')
+
+let number = 5
+number > 0
+    ? console.log(`${number} is a positive number`)
+    : console.log(`${number} is a negativee number`)
+#+end_src
+
+#+RESULTS:
+: You need a rain coat
+: No need a rain coat
+: Don't drink more water
+: 5 is a positive number
+: undefined
+* Date objects
+#+begin_src js :exports both
+const now = new Date()
+console.log(now);
+console.log(
+  `Getting full year: ${now.getFullYear()}`,
+  `\nGetting month: ${now.getMonth()}, (from 0 to 11)`,
+  `\nGetting date: ${now.getDate()}`,
+  `\nGetting day: ${now.getDay()}`,
+  `\nGetting hours: ${now.getHours()}`,
+  `\nGetting minutes: ${now.getMinutes()}`,
+  `\nGetting seconds: ${now.getSeconds()}`,
+  `\nGetting time (getTime): ${now.getTime()}`,
+  `\nGetting time (Date.now): ${Date.now()}`,
+);
+#+end_src
+
+#+RESULTS:
+#+begin_example
+2024-06-30T18:03:41.548Z
+Getting full year: 2024
+Getting month: 5, (from 0 to 11)
+Getting date: 30
+Getting day: 0
+Getting hours: 20
+Getting minutes: 3
+Getting seconds: 41
+Getting time (getTime): 1719770621548
+Getting time (Date.now): 1719770621552
+undefined
+#+end_example
