@@ -567,3 +567,60 @@ Getting time (getTime): 1719770621548
 Getting time (Date.now): 1719770621552
 undefined
 #+end_example
+* Day 4 Conditionals
+** if
+#+begin_src js :exports both
+let num = 'a'
+if (num > 0){
+    console.log(`${num} is a positive number`);
+} else if (num < 0) {
+    console.log(`The number ${num} is negative`);
+} else if (num == 0) {
+    console.log(`The ${num} is zero`);
+} else {
+    console.log(`${num} is not a number`);
+}
+#+end_src
+
+#+RESULTS:
+: a is not a number
+: undefined
+** if else
+#+begin_src js :exports both
+// sunny cloudy rainy
+let weather = 'idk'
+if (weather == 'rainy'){
+    console.log('Take an umbrella');
+} else if (weather == 'sunny'){
+    console.log('You can go out');
+} else if (weather == 'cloudy'){
+    console.log('Maybe you nned a jacket');
+} else {
+    console.log('Select among \'sunny\', \'cloudy\' and \'rainy\'' );
+}
+#+end_src
+
+#+RESULTS:
+: Select among 'sunny', 'cloudy' and 'rainy'
+: undefined
+** switch
+#+begin_src js :exports both
+let weather = 'a'
+switch (weather){
+    case 'rainy':
+        console.log('take an umbrella');
+        break
+    case 'cloudy':
+        console.log('Take a jacket');
+        break
+    case 'sunny':
+        console.log('You can go out');
+        break
+    default:
+        console.log('You must select among \'rainy\', \'cloudy\' and \'sunny\'');
+}
+#+end_src
+
+#+RESULTS:
+: You must select among 'rainy', 'cloudy' and 'sunny'
+: undefined
